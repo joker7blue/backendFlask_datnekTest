@@ -3,12 +3,14 @@ from flask import Flask, render_template, flash, redirect, url_for, request, jso
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
+from flask_cors import CORS
 #from models.Language import Language
 
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 app = Flask(__name__)
+CORS(app)
 
 # SECRET KEY configuration for forms
 app.config['SECRET_KEY'] = "@kalidoukAZkdkfdkfndnAdfdkoozvld"
@@ -40,7 +42,7 @@ class Language(db.Model):
             'code': self.code,
             'level_speak': self.level_speak,
             'level_write': self.level_write,
-            'level_write': self.level_write,
+            'level_comprehension': self.level_comprehension,
         }   
         return data
 
