@@ -86,8 +86,8 @@ def update_langs(id):
     data = request.get_json()
 
     lang = Language.query.get_or_404(id)
-    lang.name = data['name']
-    lang.code = data['code']
+    #lang.name = data['name']
+    #lang.code = data['code']
     lang.level_speak = data['level_speak']
     lang.level_write = data['level_write']
     lang.level_comprehension = data['level_comprehension']
